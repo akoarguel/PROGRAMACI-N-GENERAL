@@ -1,0 +1,16 @@
+package Tema_3;
+
+public class Actividad_3_3 {
+
+	public static void main(String[] args) {
+		double p=3.0;
+		double resultado;
+		
+		
+		resultado = p*2;
+		p = (double)(8.1/5);
+		resultado = p;
+
+	}
+
+}

@@ -1,0 +1,20 @@
+/*
+ * ejemplo
+ */
+package Tema_3;
+
+public class Actividad_3_916_Ejemplo {
+
+	public static void main(String[] args) {
+		int totalDias = 0;
+		int precipitacionesMes;
+		int mes=1;
+		
+		do {
+			System.out.printf("Introduce las precipitaciones del mes %d ", mes);
+			precipitacionesMes = Integer.parseInt(telado.readLine());
+		} while (mes <= 12);
+
+	}
+
+}

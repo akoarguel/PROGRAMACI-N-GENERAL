@@ -1,0 +1,16 @@
+/*
+ * Realiza un pequeño programa que pida al usuario una letra y muestre por pantalla el carácter siguiente
+ * al especificado
+ */
+package Tema_3;
+
+public class Actividad_3_7 {
+
+	public static void main(String[] args) {
+		char letra;
+		
+		System.out.println("Estribe una letra: ");
+		
+	}
+
+}

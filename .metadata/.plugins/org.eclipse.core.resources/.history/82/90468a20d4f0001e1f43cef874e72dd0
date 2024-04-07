@@ -1,0 +1,29 @@
+/*
+ * Imaginemos que queremos desarrollar un programa tal que al escribir un dia de la semana aparezca por
+ * pantalla la actividad extraescolar a la que debe acudir nuestro hijo. Por ejemplo, si ejecutamos y escribimos 
+ * "martes" que aparezca "Natación".
+ * Lunes psicomotricidad
+ * Martes natación
+ * Miércoles música
+ * Jueves natación
+ * Viernes descanso
+ * Sabado sin actividades
+ * Domingo sin actividades
+ * Día erróneo
+ */
+
+package Tema_3;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Actividad_3_911 {
+
+	public static void main(String[] args) {
+		String respuesta = null;
+		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+		respuesta = teclado.readLine();
+
+	}
+
+}

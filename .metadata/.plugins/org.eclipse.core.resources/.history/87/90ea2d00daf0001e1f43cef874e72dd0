@@ -1,0 +1,49 @@
+package Tema_3_Ejercicios_Ampliacion;
+
+public class Ejercicio_1 {
+
+	public class Main {
+	    public static void main(String[] args) {
+	        boolean a, b;
+
+	        System.out.println("Tabla de verdad del operador && (AND):");
+	        System.out.println("a\tb\ta && b");
+	        a = true;
+	        b = true;
+	        System.out.println(a + "\t" + b + "\t" + (a && b));
+	        a = true;
+	        b = false;
+	        System.out.println(a + "\t" + b + "\t" + (a && b));
+	        a = false;
+	        b = true;
+	        System.out.println(a + "\t" + b + "\t" + (a && b));
+	        a = false;
+	        b = false;
+	        System.out.println(a + "\t" + b + "\t" + (a && b));
+
+	        System.out.println("\nTabla de verdad del operador || (OR):");
+	        System.out.println("a\tb\ta || b");
+	        a = true;
+	        b = true;
+	        System.out.println(a + "\t" + b + "\t" + (a || b));
+	        a = true;
+	        b = false;
+	        System.out.println(a + "\t" + b + "\t" + (a || b));
+	        a = false;
+	        b = true;
+	        System.out.println(a + "\t" + b + "\t" + (a || b));
+	        a = false;
+	        b = false;
+	        System.out.println(a + "\t" + b + "\t" + (a || b));
+
+	        System.out.println("\nTabla de verdad del operador ! (NOT):");
+	        System.out.println("a\t!a");
+	        a = true;
+	        System.out.println(a + "\t" + !a);
+	        a = false;
+	        System.out.println(a + "\t" + !a);
+	    }
+	}
+
+
+}

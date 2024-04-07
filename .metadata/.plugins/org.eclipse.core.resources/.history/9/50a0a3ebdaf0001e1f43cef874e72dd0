@@ -1,0 +1,43 @@
+package Tema_3_Ejercicios_Ampliacion;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import java.util.Scanner;
+
+public class Ejercicio_2 {
+    public static void main(String[] args) {
+    	BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+
+        // Solicitar al usuario que ingrese dos números enteros
+        System.out.print("Ingresa el primer número entero: ");
+        int num1 = Integer.parseInt(teclado.readLine());
+
+        System.out.print("Ingresa el segundo número entero: ");
+        int num2 = Integer.parseInt(teclado.readLine());
+
+        // Realizar operaciones a nivel de bits
+        int and = num1 & num2;
+        int or = num1 | num2;
+        int xor = num1 ^ num2;
+        int not1 = ~num1;
+        int not2 = ~num2;
+        int desplazamientoIzq = num1 << num2;
+        int desplazamientoDer = num1 >> num2;
+        int desplazamientoDerSinSigno = num1 >>> num2;
+
+        // Mostrar resultados
+        System.out.println("Operaciones a nivel de bits:");
+        System.out.println("AND: " + and);
+        System.out.println("OR: " + or);
+        System.out.println("XOR: " + xor);
+        System.out.println("NOT (num1): " + not1);
+        System.out.println("NOT (num2): " + not2);
+        System.out.println("Desplazamiento a la izquierda: " + desplazamientoIzq);
+        System.out.println("Desplazamiento a la derecha: " + desplazamientoDer);
+        System.out.println("Desplazamiento a la derecha sin signo: " + desplazamientoDerSinSigno);
+
+        scanner.close();
+    }
+}

@@ -1,0 +1,25 @@
+package Tema_3_Ejercicios_Ampliacion;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Ejercicio_7 {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int fact = 0;
+		
+		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("Introuce el número: ");
+		fact = Integer.parseInt(teclado.readLine());
+		
+		for (int i = 0; i < fact; i++) {
+			facto = fact*fact;
+		}
+		
+		System.out.println("El factorial es: " + fact);
+		
+	}
+
+}

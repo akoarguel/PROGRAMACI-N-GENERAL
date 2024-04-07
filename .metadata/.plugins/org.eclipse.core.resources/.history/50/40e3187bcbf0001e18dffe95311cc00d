@@ -1,0 +1,11 @@
+package Tema_3;
+
+public class Actividad_3_5 {
+
+	public static void main(String[] args) {
+		int a=3, b=5;
+		int c = a&b;
+		
+	}
+
+}

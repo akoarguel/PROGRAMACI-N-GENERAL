@@ -1,0 +1,14 @@
+package Tema_3_Ejercicios_Ampliacion;
+
+public class Ejercicio_3 {
+
+	public static void main(String[] args) {
+		String nombre, apellido1, apellido2;
+		
+		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("Introduce tu nombre: ");
+
+	}
+
+}

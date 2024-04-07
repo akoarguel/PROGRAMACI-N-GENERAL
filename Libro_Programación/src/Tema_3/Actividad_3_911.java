@@ -1,0 +1,60 @@
+/*
+ * Imaginemos que queremos desarrollar un programa tal que al escribir un dia de la semana aparezca por
+ * pantalla la actividad extraescolar a la que debe acudir nuestro hijo. Por ejemplo, si ejecutamos y escribimos 
+ * "martes" que aparezca "Natación".
+ * Lunes psicomotricidad
+ * Martes natación
+ * Miércoles música
+ * Jueves natación
+ * Viernes descanso
+ * Sabado sin actividades
+ * Domingo sin actividades
+ * Día erróneo
+ */
+
+package Tema_3;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Actividad_3_911 {
+
+	public static void main(String[] args) throws IOException {
+		String respuesta = null;
+		
+		System.out.println("Introduce un día de la semana");
+		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+		respuesta = teclado.readLine();
+		
+		switch (respuesta) {
+		case "lunes":
+			System.out.println("--Psicomotricidad--");
+			break;
+		case "martes":
+			System.out.println("--Natación--");
+			break;
+		case "miercoles":
+			System.out.println("--Música--");
+			break;
+		case "jueves":
+			System.out.println("--Natación--");
+			break;
+		case "viernes":
+			System.out.println("--Descanso--");
+			break;
+		case "sabado":
+			System.out.println("--Día sin actividades--");
+			break;
+		case "domingo":
+			System.out.println("--Dïa sin actividades--");
+			break;
+
+		default:
+			System.out.println("--Día erróneo--");
+			break;
+		}
+
+	}
+
+}
