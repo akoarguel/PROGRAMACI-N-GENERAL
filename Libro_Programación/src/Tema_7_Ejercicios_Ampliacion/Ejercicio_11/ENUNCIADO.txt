@@ -1,0 +1,3 @@
+Crea una pequeña aplicacion de consola que gestione una tienda de móviles. La tienda sidtribuye dispositivos móviles tales como telefonos y tabletas.
+Se mantine información sobre los producto de la tienda, elimina o inserta un nuevo producto o inserta un nuevo producto, visualiza precios individuales 
+según producto solicitado, etc. Echa imaginación.
