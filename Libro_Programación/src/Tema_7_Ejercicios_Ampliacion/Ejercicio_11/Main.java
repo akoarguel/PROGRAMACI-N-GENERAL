@@ -7,15 +7,15 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws NumberFormatException, IOException, InterruptedException {
         BufferedReader scanner = new BufferedReader(new InputStreamReader(System.in));
-        int[] refSocios = { 1, 2, 3, 4, 5 };
-        double descuento = 15;
         Producto[] productos = new Producto[50];
 
         productosDefault(productos);
 
-        pricipal(scanner, descuento, productos);
+        pricipal(scanner, productos);
 
     }
+
+    // MÉTODOS BASICOS
 
     private static void productosDefault(Producto[] productos) {
         Producto p1 = new Producto(1, Tipo.TELEFONO, "Samsung", "S24 ULTRA", 6.8, "8 GEN 3", 120);
@@ -82,13 +82,26 @@ public class Main {
 
     }
 
-    private static void pricipal(BufferedReader scanner, double descuento, Producto[] productos)
+    private static void pricipal(BufferedReader scanner, Producto[] productos)
             throws InterruptedException, NumberFormatException, IOException {
         int respuesta;
         do {
+                    for (int i = 0; i < 20; i++) {
+                        Thread.sleep(15);
+                        System.out.print("-");
+                    }
+                    System.out.println();
+            Thread.sleep(150);
             System.out.println("1   -   CLIENTE ");
+            Thread.sleep(150);
             System.out.println("2   -   ADMIN ");
+            Thread.sleep(150);
             System.out.println("0   -   SALIR");
+            Thread.sleep(150);
+                    for (int i = 0; i < 20; i++) {
+                        Thread.sleep(15);
+                        System.out.print("-");
+                    }
             System.out.println("\nELIGE UNA OPCIÓN: ");
             respuesta = Integer.parseInt(scanner.readLine());
             switch (respuesta) {
@@ -96,10 +109,10 @@ public class Main {
                     System.out.println("\nVUELVA PRONTO");
                     break;
                 case 1:
-                    menuCliente(scanner);
+                    menuCliente(scanner, productos);
                     break;
                 case 2:
-                    menuAdmin(scanner);
+                    menuAdmin(scanner, productos);
                     break;
                 default:
                     break;
@@ -108,20 +121,9 @@ public class Main {
         } while (respuesta != 0);
     }
 
-    private static void menuCliente(BufferedReader scanner, double descuento, Producto[] productos)
-            throws InterruptedException, NumberFormatException, IOException {
-        Thread.sleep(150);
-        System.out.println("\n1 - BUSCAR POR RANGO DE PRECIO ");
-        Thread.sleep(150);
-        System.out.println("2 - MODIFICAR NUEVO PRODCUTO. ");
-        Thread.sleep(150);
-        System.out.println("3 - BUSCAR POR PULGADAS");
-        Thread.sleep(150);
-        System.out.println("0 - SLIR");
+    // MENUS CLIENTE Y ADMIN
 
-    }
-
-    private static void menuAdmin(BufferedReader scanner, double descuento, Producto[] productos)
+    private static void menuAdmin(BufferedReader scanner, Producto[] productos)
             throws InterruptedException, NumberFormatException, IOException {
         System.out.println("INTRODUCE LA CONTASEÑA: ");
         int constraseña = Integer.parseInt(scanner.readLine());
@@ -153,17 +155,14 @@ public class Main {
                     System.out.println("VUELVA PRONTO");
                     break;
                 case 1:
-                    insertarProducto(scanner);
+                    insertarProducto(scanner, productos);
                     break;
                 case 2:
-                    modificarProducto(scanner);
+                    modificarProducto(scanner, productos);
                     break;
                 case 3:
-                    eliminarProducto(scanner);
+                    eliminarProducto(scanner, productos);
                     break;
-                case 4:
-                    cambiarDescuento(scanner, descuento);
-
                 default:
                     break;
             }
@@ -172,4 +171,187 @@ public class Main {
             System.out.println("ERROR");
         }
     }
+
+    private static void menuCliente(BufferedReader scanner, Producto[] productos)
+            throws InterruptedException, NumberFormatException, IOException {
+        int respuesta;
+
+        do {
+            Thread.sleep(150);
+            System.out.println("\n1 - BUSCAR POR MARCA. ");
+            Thread.sleep(150);
+            System.out.println("2 - BUSCAR POR PULGADAS");
+            Thread.sleep(150);
+            System.out.println("0 - SALIR");
+            System.out.println("\nELIGE UNA OPCION: ");
+            respuesta = Integer.parseInt(scanner.readLine());
+
+            switch (respuesta) {
+                case 0:
+                    System.out.println("\nSALIENDO, VUELVA PRONTO. ");
+                    System.exit(0);
+                    break;
+                case 1:
+                    buscarMarca(scanner, productos);
+                    break;
+                case 2:
+                    // buscarPulgadas(scanner, descuento, productos);
+                    break;
+                default:
+                    break;
+            }
+        } while (respuesta != 0);
+
+    }
+    
+    // MÉTODOS CLIENTE
+
+    private static void buscarMarca(BufferedReader scanner, Producto[] productos) throws IOException {
+        System.out.println("\nINTRODUCE LA MARCA DE DISPOSITIVOS QUE QUIERAS OJEAR: ");
+        String marca = scanner.readLine();
+        
+        for (int i = 0; i < productos.length; i++) {
+            if (productos[i] != null && productos[i].getMarca().equalsIgnoreCase(marca)) {
+                productos[i].mostrarContenido();
+                System.out.println();
+            }
+        }
+    }
+
+    // MÉTODOS ADMIN
+    
+    private static void eliminarProducto(BufferedReader scanner, Producto[] productos) throws NumberFormatException, IOException, InterruptedException {
+        System.out.println("\nINTRODUZCA LA REFERENCIA DEL DISPOSITIVO QUE QUIERA ELIMINAR: ");
+        int respuesta = Integer.parseInt(scanner.readLine());
+        productos[respuesta].mostrarContenido();
+
+        System.out.println("¿SEGURO QUE QUIERES CONTINUAR? ('y' o 'n')");
+        String confir = scanner.readLine();
+        if (confir.equalsIgnoreCase("y")) {
+            productos[respuesta] = null;
+        } else {
+            System.out.println("VOLVIENDO AL MENU");
+            Thread.sleep(150);
+            System.out.println(".");
+            Thread.sleep(150);
+            System.out.println(".");
+            Thread.sleep(150);
+            System.out.println(".");
+            System.out.println();
+        }
+    }
+
+    private static void modificarProducto(BufferedReader scanner, Producto[] productos)
+            throws NumberFormatException, IOException, InterruptedException {
+        int eleccion;
+        System.out.println("\nINTRODUZCA LA REFERENCIA DEL DISPOSITIVO QUE QUIERA CAMBIAR: ");
+        int respuesta = Integer.parseInt(scanner.readLine());
+        respuesta++;
+        productos[respuesta].mostrarContenido();
+
+        do {
+            System.out.println("\n1 - CAMBIAR MARCA");
+            System.out.println("2 - CAMBIAR MODELO");
+            System.out.println("3 - CAMBIAR TIPO (TABLET/TELEFONO)");
+            System.out.println("4 - CAMBIAR PULGADAS");
+            System.out.println("5 - CAMBIAR PROCESADOR");
+            System.out.println("6 - CAMBIAR HZ DE LA PANTALLA");
+            System.out.println("0 - SALIR");
+            eleccion = Integer.parseInt(scanner.readLine());
+
+            switch (eleccion) {
+                case 1:
+                    System.out.println("NUEVA MARCA: ");
+                    String marca = scanner.readLine();
+                    productos[respuesta].setMarca(marca);
+                    break;
+                case 2:
+                    System.out.println("NUEVO MODELO: ");
+                    String modelo = scanner.readLine();
+                    productos[respuesta].setModelo(modelo);
+                    break;
+                case 3:
+                    System.out.println(" - TELEFONO (a) \n - TABLET (b)");
+                    String tipo = scanner.readLine();
+                    if (tipo.equalsIgnoreCase("a")) {
+                    } else {
+                        productos[respuesta].setTipo(Tipo.TABLETA);
+                    }
+                    break;
+                case 4:
+                    System.out.println("NUEVAS PULGADAS: ");
+                    double pulgadas = Double.parseDouble(scanner.readLine());
+                    productos[respuesta].setPulgadas(pulgadas);
+                    break;
+                case 5:
+                    System.out.println("NUEVO PROCESADOR: ");
+                    String procesador = scanner.readLine();
+                    productos[respuesta].setProcesador(procesador);
+                    break;
+                case 6:
+                    System.out.println("NUEVOS HZ DE PANTALLA: ");
+                    int hz = Integer.parseInt(scanner.readLine());
+                    productos[respuesta].setHerciosPantalla(hz);
+                    break;
+                case 0:
+                    System.out.println("SALIENDO");
+                    Thread.sleep(150);
+                    System.out.println(".");
+                    Thread.sleep(150);
+                    System.out.println(".");
+                    Thread.sleep(150);
+                    System.out.println(".");
+                default:
+                    break;
+            }
+        } while (eleccion != 0);
+
+    }
+
+    private static void insertarProducto(BufferedReader scanner, Producto[] productos) throws IOException {
+        for (int i = 0; i < productos.length; i++) {
+            if (productos[i] == null) {
+                // introducimos los datos del nuevo dispositivo
+                int referencia = i + 1;
+                System.out.println("INTRODUCE LA MARCA DEL DISPOSITIVO: ");
+                String marca = scanner.readLine();
+                System.out.println("INTRODUCE EL MODELO DEL DISPOSITIVO: ");
+                String modelo = scanner.readLine();
+                System.out.println("INTRODUCE LAS PULGADAS DEL DISPOSITIVO: ");
+                double pulgadas = Double.parseDouble(scanner.readLine());
+                System.out.println("INTRODUCE EL PROCESADOR DEL DISPOSITIVO: ");
+                String procesador = scanner.readLine();
+                System.out.println("INTRODUCE LOS HERCIOS DE LA PANTALLA: ");
+                int hz = Integer.parseInt(scanner.readLine());
+                // para hacerlo más fácil uso un switch para el caso de que sea tablet o
+                // teléfono
+                System.out.println(" - TELEFONO (a) \n - TABLET (b)");
+                String dispositivo = scanner.readLine();
+    
+                switch (dispositivo) {
+                    case "a":
+                        Producto producto = new Producto(referencia, Tipo.TELEFONO, marca, modelo, pulgadas, procesador,
+                                hz);
+                        productos[i] = producto;
+                        break;
+                    case "b":
+                        Producto producto2 = new Producto(referencia, Tipo.TABLETA, marca, modelo, pulgadas, procesador,
+                                hz);
+                        productos[i] = producto2;
+                        break;
+                    default:
+                        System.out.println("JODER MIRA QUE TE DIJE A o B, ale a hacerlo otra vez");
+                        break;
+                }
+    
+                System.out.println("\nDATOS INTRODUCIDOS CON ÉXITO. \n");
+                productos[i].mostrarContenido();
+                System.out.println();
+                // Salimos del bucle una vez que se ha insertado el producto
+                break;
+            }
+        }
+    }
+    
+
 }
