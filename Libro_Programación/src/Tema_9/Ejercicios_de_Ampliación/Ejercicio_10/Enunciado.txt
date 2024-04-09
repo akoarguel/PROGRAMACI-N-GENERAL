@@ -1,0 +1,3 @@
+Crea una clase llamada alumno y haz que esta implemente el método compareTo() de la interfaz Comparable en java tal que puedan compararse dos alumnos.
+A la hora de comprobar si dos alumnos son iguales se tiene en cuenta su nombre y apellidos tal que devolvemos -1 si alfabéticamente el nombre y apellidosestá antes 
+del nombre y apellidos está antes del nombre y apellidos que realiza la comprarción, 0 si son iguales y 1 si es mayor.
