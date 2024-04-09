@@ -1,4 +1,4 @@
-package Tema_9;
+package Tema_9.Ejercicios_de_Ampliación.Pruebas;
 
 public class Rombo extends FiguraGeometrica{
     private int diagonalMayor;

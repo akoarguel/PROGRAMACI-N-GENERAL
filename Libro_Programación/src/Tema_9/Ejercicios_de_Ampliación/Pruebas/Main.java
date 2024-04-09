@@ -4,7 +4,7 @@
  * funcion que se encargue de contar el número de figuras geométricas de cada tipo incluidas en el array. La salid a de este método podría ser:
  * 2 Circulos; 1 Cuadrados; 4 Rombos; 10 Rectangulos
  */
-package Tema_9;
+package Tema_9.Ejercicios_de_Ampliación.Pruebas;
 
 import java.util.ArrayList;
 

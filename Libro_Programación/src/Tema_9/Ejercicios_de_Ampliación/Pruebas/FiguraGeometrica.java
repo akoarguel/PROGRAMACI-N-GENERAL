@@ -4,7 +4,7 @@
  * con la posicion del objeto. Las demás clases deben incluir las propiedades necesarias en funcion del tipo de figura, por
  * ejemplo, la clase Circulo incluirá atributos del tipo coordenada x e y del centro y radio. Agregar los métodos área y perímetro
  */
-package Tema_9;
+package Tema_9.Ejercicios_de_Ampliación.Pruebas;
 
 public abstract class FiguraGeometrica {
     private int x;
