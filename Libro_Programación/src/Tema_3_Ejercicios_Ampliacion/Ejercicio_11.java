@@ -27,6 +27,7 @@ public class Ejercicio_11 {
         } else {
             System.out.println("No es un palíncromo");
         }
-
+        System.out.println(c);
     }
+    
 }

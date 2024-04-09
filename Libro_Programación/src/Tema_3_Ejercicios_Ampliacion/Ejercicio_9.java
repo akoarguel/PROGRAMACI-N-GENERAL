@@ -19,6 +19,7 @@ public class Ejercicio_9 {
         String mensaje = (a % 2 == 0) ? "El número A es divisible por B" : "El número A no es divisible por B";
 
         System.out.println(mensaje);
+        System.out.println(b);
 
         teclado.close();
         
