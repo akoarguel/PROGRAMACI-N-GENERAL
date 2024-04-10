@@ -1,4 +1,4 @@
-package Tema_9;
+package Tema_9.Ejercicio_Practica.Ejercicio_tuki;
 
 public class Cuadrado extends FiguraGeometrica{
 
