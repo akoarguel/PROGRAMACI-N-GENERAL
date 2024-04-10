@@ -20,7 +20,7 @@ public class Actividad_3_912_Ejemplo {
 			if (numero % contador == 0) {
 				totalDivisores++;
 			}
-			
+			System.out.println(totalDivisores);
 			contador++;
 		}
 

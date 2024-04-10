@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import Tema_7.Actividad_74.*;
-
 public class Main {
     public static void main(String[] args) throws NumberFormatException, IOException {
 
@@ -30,7 +28,11 @@ public class Main {
         Persona[] personas = new Persona[5];
         int respuesta;
 
-        
+        p1.mostrarDatos();
+        p2.mostrarDatos();
+        p3.mostrarDatos();
+        p4.mostrarDatos();
+        p5.mostrarDatos();
 
         do {
             menu();

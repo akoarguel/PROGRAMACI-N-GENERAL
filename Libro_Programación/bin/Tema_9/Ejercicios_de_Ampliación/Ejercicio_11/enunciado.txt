@@ -1,0 +1,3 @@
+Crea una interfaz denominada sonidos. En ella tendremos un método llamado sonidoProducido(). La funcion sonidoProducido devuelve una cadena de caracteres
+con el sonido que realiza un objeto en concreto. Crea una estructura de clases tal que se disponga de una superclase llamada InstrumentosMusicales de la que 
+derivan InstrumentoViento e InstrumentoPercusion. Haz que las clases implementen la interfaz sonidos.
