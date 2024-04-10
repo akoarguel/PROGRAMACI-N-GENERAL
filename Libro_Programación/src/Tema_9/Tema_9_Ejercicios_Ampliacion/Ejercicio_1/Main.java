@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<SerVivo> seresVivos = new ArrayList<>();
-        int contador;
 
         SerVivo s2 = new Planta("Rosales", 3, "Jardín", "Ornamental", "Mediana", "Tierra común", "Primavera");
         SerVivo s3 = new Planta("Cactus", 10, "Desierto", "Suculenta", "Pequeña", "Arena", "Todo el año");
