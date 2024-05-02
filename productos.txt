@@ -1,0 +1,11 @@
+NOMBRE: MSI Prestige  |   PRECIO: 1099.0    |   NUMERO EN STOCK: 10
+NOMBRE: Lenovo ThinkPad X1 Carbon  |   PRECIO: 1299.0    |   NUMERO EN STOCK: 8
+NOMBRE: Dell XPS 15  |   PRECIO: 1499.0    |   NUMERO EN STOCK: 15
+NOMBRE: Apple MacBook Air  |   PRECIO: 999.0    |   NUMERO EN STOCK: 12
+NOMBRE: HP Spectre x360  |   PRECIO: 1199.0    |   NUMERO EN STOCK: 7
+NOMBRE: Asus ZenBook Duo  |   PRECIO: 1299.0    |   NUMERO EN STOCK: 9
+NOMBRE: Acer Swift 5  |   PRECIO: 899.0    |   NUMERO EN STOCK: 6
+NOMBRE: Microsoft Surface Laptop 4  |   PRECIO: 1299.0    |   NUMERO EN STOCK: 11
+NOMBRE: Google Pixelbook Go  |   PRECIO: 849.0    |   NUMERO EN STOCK: 8
+NOMBRE: Razer Blade 15  |   PRECIO: 1799.0    |   NUMERO EN STOCK: 5
+NOMBRE: HP Omen  |   PRECIO: 1200.0    |   NUMERO EN STOCK: 13
