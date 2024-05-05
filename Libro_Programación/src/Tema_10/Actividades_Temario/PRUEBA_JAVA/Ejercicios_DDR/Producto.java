@@ -10,7 +10,6 @@
  * lee el segundo registro
  */
 
-
 package Tema_10.Actividades_Temario.PRUEBA_JAVA.Ejercicios_DDR;
 
 public class Producto {

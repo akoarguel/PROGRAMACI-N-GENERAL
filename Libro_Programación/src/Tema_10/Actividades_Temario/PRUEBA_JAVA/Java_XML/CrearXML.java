@@ -86,6 +86,25 @@ public class CrearXML {
 
             coches.appendChild(coche3);
 
+            Element coche4 = documento.createElement("coche");
+
+            Element matricuala4 = documento.createElement("matricula");
+            Text textMatricula4 = documento.createTextNode("4444DDD");
+            matricuala4.appendChild(textMatricula4);
+            coche4.appendChild(matricuala4);
+
+            Element marca4 = documento.createElement("marca");
+            Text textMarca4 = documento.createTextNode("FORD");
+            marca4.appendChild(textMarca4);
+            coche4.appendChild(marca4);
+
+            Element precio4 = documento.createElement("precio");
+            Text textPrecio4 = documento.createTextNode("7000");
+            precio4.appendChild(textPrecio4);
+            coche4.appendChild(precio4);
+
+            coches.appendChild(coche4);
+
 
             documento.getDocumentElement().appendChild(coches);
 
