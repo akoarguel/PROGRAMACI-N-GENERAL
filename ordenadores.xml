@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ordenadores>
+    <ordenador>
+        <MARCA>MSI</MARCA>
+        <MODELO>14 prestige</MODELO>
+        <PROCESADOR>i5-12450H</PROCESADOR>
+        <STOCK>40</STOCK>
+        <MARCA>ASUS</MARCA>
+        <MODELO>Strix</MODELO>
+        <PROCESADOR>i7-10750H</PROCESADOR>
+        <STOCK>50</STOCK>
+        <MARCA>HP</MARCA>
+        <MODELO>Omen</MODELO>
+        <PROCESADOR>i5-11750H</PROCESADOR>
+        <STOCK>60</STOCK>
+    </ordenador>
+</ordenadores>

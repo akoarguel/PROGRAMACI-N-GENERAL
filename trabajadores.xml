@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Trabajadores>
+    <trabajadores>
+        <trabajador>
+            <nombre>Zeta</nombre>
+            <dni>12341234S</dni>
+            <Puesto>Camarera</Puesto>
+        </trabajador>
+    </trabajadores>
+</Trabajadores>
