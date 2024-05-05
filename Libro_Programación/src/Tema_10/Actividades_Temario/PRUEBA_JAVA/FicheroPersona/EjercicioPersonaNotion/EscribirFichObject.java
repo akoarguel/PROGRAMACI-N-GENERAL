@@ -11,20 +11,19 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
-import java.util.Scanner;
 
 public class EscribirFichObject {
     public static void main(String[] args) throws FileNotFoundException, IOException, InterruptedException {
         File FicheroPersonas = new File("C:\\Users\\manel\\Documents\\FICHEROS\\FicheroPersonasNotion.dat");
-        Persona persona; 
+        Persona persona;
 
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FicheroPersonas));
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FicheroPersonas));
         BufferedReader scanner = new BufferedReader(new InputStreamReader(System.in));
-    
-        String nombres[] = {"Ana", "Luis Miguel", "Alicia", "Pedro", "Manuel",
-					             "Andrés", "Julio", "Antonio", "María Jesús"};
-		int edades[] = {14, 15, 13, 16, 19, 13, 15, 21, 11}; 
+
+        String nombres[] = { "Ana", "Luis Miguel", "Alicia", "Pedro", "Manuel",
+                "Andrés", "Julio", "Antonio", "María Jesús" };
+        int edades[] = { 14, 15, 13, 16, 19, 13, 15, 21, 11 };
 
         Thread.sleep(150);
         System.out.println("Introducir los datos de las personas por Default. ");
@@ -39,7 +38,7 @@ public class EscribirFichObject {
             for (int i = 0; i < edades.length; i++) {
                 persona = new Persona(nombres[i], edades[i]);
                 oos.writeObject(persona);
-                System.out.println("Grabo los datos de la persona " + (i+1));
+                System.out.println("Grabo los datos de la persona " + (i + 1));
             }
             System.out.println("Introducidos con éxito. ");
         } catch (IOException e) {
@@ -51,30 +50,30 @@ public class EscribirFichObject {
 
         do {
             menu();
-        System.out.println("\nELIGE UNA OPCIÓN: ");
-        respuesta = Integer.parseInt(scanner.readLine());
+            System.out.println("\nELIGE UNA OPCIÓN: ");
+            respuesta = Integer.parseInt(scanner.readLine());
 
-        switch (respuesta) {
-            case 0:
-                Thread.sleep(150);
-                System.out.println("SALIENDO DEL PROGRAMA");
-                Thread.sleep(150);
-                System.out.println(".");
-                Thread.sleep(150);
-                System.out.println(".");
-                Thread.sleep(150);
-                System.out.println(".");
-                break;
-            case 1:
-                introducirPersona(FicheroPersonas, oos, scanner);
-                break;
-            case 2:
-                visualizarArchivo(FicheroPersonas, ois, scanner);
-                break;
-            default:
-                System.out.println("\nINTRODUCE UNA OPCIÓN VÁLIDA. ");
-                break;
-        }
+            switch (respuesta) {
+                case 0:
+                    Thread.sleep(150);
+                    System.out.println("SALIENDO DEL PROGRAMA");
+                    Thread.sleep(150);
+                    System.out.println(".");
+                    Thread.sleep(150);
+                    System.out.println(".");
+                    Thread.sleep(150);
+                    System.out.println(".");
+                    break;
+                case 1:
+                    introducirPersona(FicheroPersonas, oos, scanner);
+                    break;
+                case 2:
+                    visualizarArchivo(FicheroPersonas, ois, scanner);
+                    break;
+                default:
+                    System.out.println("\nINTRODUCE UNA OPCIÓN VÁLIDA. ");
+                    break;
+            }
         } while (respuesta != 0);
     }
 
@@ -86,24 +85,25 @@ public class EscribirFichObject {
         try {
             while (true) {
                 persona = (Persona) ois.readObject();
-                System.out.println(i + " --> "); 
-                System.out.println("NOMBRE --> " + persona.getNombre() + "  |   EDAD --> " + persona.getEdad());     
+                System.out.println(i + " --> ");
+                System.out.println("NOMBRE --> " + persona.getNombre() + "  |   EDAD --> " + persona.getEdad());
             }
         } catch (EOFException e) {
             System.out.println();
         } catch (StreamCorruptedException es) {
-            // TODO Auto-generated catch block
+            System.out.println(es.getMessage());
             es.printStackTrace();
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
+            System.out.println(e.getMessage());
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            System.out.println(e.getMessage());
             e.printStackTrace();
-        } 
+        }
     }
 
-    private static void introducirPersona(File ficheroPersonas, ObjectOutputStream oos, BufferedReader scanner) throws IOException {
+    private static void introducirPersona(File ficheroPersonas, ObjectOutputStream oos, BufferedReader scanner)
+            throws IOException {
         String nombre;
         int edad;
         Persona persona;
@@ -117,7 +117,6 @@ public class EscribirFichObject {
         oos.writeObject(persona);
         System.out.println("DATOS INTRODUCIRDOS CORRECTAMENTE. ");
         System.out.println(persona.toString());
-        
 
     }
 
@@ -125,6 +124,6 @@ public class EscribirFichObject {
         System.out.println("\n1 - INTRODUCE UNA NUEVA PERSONA ");
         System.out.println("2 - VISUALIZA ELARCHIVO FicheroPersonasNotion.dat ");
         System.out.println("0 - SALIR DEL PROGRAMA");
-        
+
     }
 }

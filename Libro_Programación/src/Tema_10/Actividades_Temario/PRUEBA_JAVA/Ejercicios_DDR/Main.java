@@ -51,7 +51,7 @@ public class Main {
             System.out.println(raf.readChar());
 
         } catch (FileNotFoundException e) {
-           System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
         } catch (IOException io){
             System.out.println(io.getMessage());
         }
